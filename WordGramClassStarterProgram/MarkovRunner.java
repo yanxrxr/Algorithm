@@ -24,14 +24,16 @@ public class MarkovRunner {
         System.out.println("running with " + markov); 
         for(int k=0; k < 3; k++){ 
             String st = markov.getRandomText(size); 
-            printOut(st); 
+            printOut(st);
         } 
     } 
 
     public void runMarkov() { 
         FileResource fr = new FileResource(); 
         String st = fr.asString(); 
-        st = st.replace('\n', ' '); 
+        st = st.replace('\n', ' ');
+        MarkovWord markovWord = new MarkovWord(3);
+        runModel(markovWord, st, 50, 643);
         //MarkovWordOne markovWord = new MarkovWordOne(); 
         //runModel(markovWord, st, 200); 
     } 
